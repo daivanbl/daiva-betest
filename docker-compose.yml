@@ -30,6 +30,7 @@ services:
     volumes:
       - ./producer:/app
     environment:
+      - APPNAME = ms-daiva-betest
       - PORT=8080
       - MONGO_URL=mongodb://mongo:27017/db_daiva_betest
       - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
