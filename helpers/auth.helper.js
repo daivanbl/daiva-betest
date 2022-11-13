@@ -20,9 +20,9 @@ exports.AuthenticateToken  = (req,res,next) =>{
 };
 
 
-exports.generateToken = function(userId){  
+exports.generateToken = (userId) =>{  
   var now = moment(Date.now()).locale('id');
-  var future = moment(now).add(72, 'm').toDate();
+  var future = moment(now).add(30, 'm').toDate();
   const payload = { 
     userId: userId,
   }
@@ -30,9 +30,9 @@ exports.generateToken = function(userId){
   return token;
 };
 
-exports.generateRefreshToken = function (userId, refreshToken) {
+exports.generateRefreshToken = (userId, refreshToken) => {
   var now = moment(Date.now()).locale('id');
-  var future = moment(now).add(72, 'm').toDate();
+  var future = moment(now).add(30, 'm').toDate();
   const payload = { 
     userId: userId,
     refreshToken: refreshToken
